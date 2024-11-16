@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 public class ConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_ETHEREUM_ORE_KEY = registerKey("ethereum_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_STONE_OF_HOPE_KEY = registerKey("stone_of_hope");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -29,6 +30,14 @@ public class ConfiguredFeatures {
                         deepslateReplaceable,
                         BlockRegistry.ETHEREUM_ORE.get().defaultBlockState(),
                         3));
+
+        register(context,
+                OVERWORLD_STONE_OF_HOPE_KEY,
+                Feature.ORE,
+                new OreConfiguration(
+                        deepslateReplaceable,
+                        BlockRegistry.STONE_OF_HOPES.get().defaultBlockState(),
+                        27));
 
 
     }
